@@ -541,7 +541,7 @@ document.write(`
 <ol class="arabic simple">
 <li><p>kunjungi web <a class="reference external" href="https://tableconvert.com/csv-to-sql">https://tableconvert.com/csv-to-sql</a></p></li>
 <li><p>load file iris dataset berformat csv yang telah kita download ke web tersebut</p></li>
-<li><p>Setelah itu akan muncul script sql dari csv tersebut <img src="img/csv2sql.png"></p></li>
+<li><p>Setelah itu akan muncul script sql dari csv tersebut <img src="gambar/csv2sql.png"></p></li>
 <li><p>edit Table Name sesuai dengan isi datanya.</p></li>
 <li><p>edit Quotes dengan MySQL / PostgreSQL sesuai dengan data tersebut akan di-insert pada database jenis apa</p></li>
 <li><p>tambahkan PRIMARY KEY setelah INT pada Id</p></li>
@@ -1832,7 +1832,7 @@ Dapat dilihat di bawah ini tidak ada warna merah yang menandakan bahwa semua mis
 <li><p>Ambil sejumlah K data dengan jarak terdekat, kemudian tentukan kelas dari data baru tersebut.</p></li>
 </ol>
 <p>Untuk mencari dekat atau jauhnya jarak antar titik pada kelas k biasanya dihitung menggunakan jarak Euclidean. Jarak Euclidean adalah formula untuk mencari jarak antara 2 titik dalam ruang dua dimensi. Berikut rumus untuk menghitung jarak Euclidean:</p>
-<img src="img/euclidien.png"><p>Untuk data yang terdapat missing value yang akan di imputasi akan disamakan id-nya seperti di metode mean. Hal ini diperuntukkan supaya dapat melihat perbandingan antara metode mean dan KNN. Berikut akan ditampilkan kembali missing value yang terdapat pada database.</p>
+<img src="gambar/euclidien.png"><p>Untuk data yang terdapat missing value yang akan di imputasi akan disamakan id-nya seperti di metode mean. Hal ini diperuntukkan supaya dapat melihat perbandingan antara metode mean dan KNN. Berikut akan ditampilkan kembali missing value yang terdapat pada database.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_17</span> <span class="o">=</span> <span class="n">_deepnote_execute_sql</span><span class="p">(</span><span class="s1">&#39;SELECT sepal.Id,SepalLengthCm, SepalWidthCm, PetalLengthCm, PetalWidthCm, Species</span><span class="se">\n</span><span class="s1">FROM data_sql AS sepal</span><span class="se">\n</span><span class="s1">INNER JOIN data_postgres AS petal ON sepal.Id = petal.Id</span><span class="se">\n</span><span class="s1">WHERE SepalLengthCm IS NULL OR Species IS NULL;&#39;</span><span class="p">,</span> <span class="s1">&#39;SQL_DEEPNOTE_DATAFRAME_SQL&#39;</span><span class="p">,</span> <span class="n">audit_sql_comment</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">sql_cache_mode</span><span class="o">=</span><span class="s1">&#39;cache_disabled&#39;</span><span class="p">)</span>
@@ -2551,12 +2551,12 @@ Accuracy:  0.933
 <p>Berikut akan dijelaskan lebih detil dari kempat konsep tersebut :</p>
 <p>K-distance dan K-neighbors</p>
 <p>K-distance adalah jarak antara suatu titik, dan merupakan tetangga terdekat Kᵗʰ. Tetangga K yang dilambangkan dengan Nₖ(A) mencakup himpunan titik yang terletak di dalam atau pada lingkaran berjari-jari jarak K. K-tetangga bisa lebih dari atau sama dengan nilai K. Kita akan melihat contohnya. Katakanlah kita mempunyai empat titik A, B, C, dan D.                                                                                                     Jika K=2, K-tetangga A adalah C, B, dan D. Di sini, nilai K=2 tetapi ||N₂(A)|| = 3. Oleh karena itu, ||Nₖ(titik)|| akan selalu lebih besar atau sama dengan K.</p>
-<img src="img/k-distance.png" width="" align="" /><p>Reachability distance (RD)</p>
-<img src="img/rd_formula.png" width="" align="" /><img src="img/rd_graphic.png" width="" align="" /><p>Ini didefinisikan sebagai jarak K maksimum Xj dan jarak antara Xi dan Xj. Ukuran jarak bersifat khusus untuk masalah (Euclidean, Manhattan, dll.)</p>
+<img src="gambar/k-distance.png" width="" align="" /><p>Reachability distance (RD)</p>
+<img src="gambar/rd_formula.png" width="" align="" /><img src="gambar/rd_graphic.png" width="" align="" /><p>Ini didefinisikan sebagai jarak K maksimum Xj dan jarak antara Xi dan Xj. Ukuran jarak bersifat khusus untuk masalah (Euclidean, Manhattan, dll.)</p>
 <p>Local reachability density (LRD)</p>
-<img src="img/lrd_formula.png" width="" align="" /><p>LRD merupakan kebalikan dari rata-rata jarak jangkauan A dari tetangganya. Semakin besar jarak jangkauan rata-rata (yaitu, tetangga jauh dari titik tersebut), semakin sedikit kepadatan titik yang ada di sekitar titik tertentu. Ini menunjukkan seberapa jauh suatu titik dari kelompok titik terdekat. Nilai LRD yang rendah menunjukkan bahwa cluster terdekat berada jauh dari titik</p>
+<img src="gambar/lrd_formula.png" width="" align="" /><p>LRD merupakan kebalikan dari rata-rata jarak jangkauan A dari tetangganya. Semakin besar jarak jangkauan rata-rata (yaitu, tetangga jauh dari titik tersebut), semakin sedikit kepadatan titik yang ada di sekitar titik tertentu. Ini menunjukkan seberapa jauh suatu titik dari kelompok titik terdekat. Nilai LRD yang rendah menunjukkan bahwa cluster terdekat berada jauh dari titik</p>
 <p>Local Outlier Factor (LOF)</p>
-<img src="img/lof_formula.png" width="" align="" /><p>LRD tiap titik digunakan untuk membandingkan dengan rata-rata LRD K tetangganya. LOF adalah perbandingan rata-rata LRD K tetangga A terhadap LRD A.</p>
+<img src="gambar/lof_formula.png" width="" align="" /><p>LRD tiap titik digunakan untuk membandingkan dengan rata-rata LRD K tetangganya. LOF adalah perbandingan rata-rata LRD K tetangga A terhadap LRD A.</p>
 <p>Jika suatu titik bukan merupakan pencilan (inlier), rasio rata-rata LRD tetangganya kira-kira sama dengan LRD suatu titik (karena kepadatan suatu titik dan tetangganya kira-kira sama). Dalam hal ini, LOF hampir sama dengan 1. Sebaliknya, jika suatu titik merupakan outlier, LRD suatu titik lebih kecil dari rata-rata LRD tetangganya. Maka nilai LOF akan tinggi.</p>
 <p>Umumnya jika LOF &gt; 1 maka dianggap outlier, namun hal tersebut tidak selalu benar. Katakanlah kita mengetahui bahwa kita hanya memiliki satu outlier dalam data, lalu kita ambil nilai LOF maksimum di antara semua nilai LOF, dan titik yang sesuai dengan nilai LOF maksimum akan dianggap sebagai outlier.</p>
 </section>
@@ -2571,37 +2571,37 @@ Accuracy:  0.933
 <li><p>Menghitung Local Outlier Factor (LOF)</p></li>
 </ol>
 <p>Mari kita tentukan data yang akan kita gunakan untuk melakukan perhitungan manual. Contoh data memiliki 3 fitur yaitu X, Y, Z yang masing masing bertipe data numeric, dan berjumlah 10.</p>
-<img src="img/data.png" width="" align="" /><ol class="arabic simple">
+<img src="gambar/data.png" width="" align="" /><ol class="arabic simple">
 <li><p>Menghitung jarak dan menentukan tetangga</p></li>
 </ol>
 <p>Selanjutnya untuk menghitung jarak, kita menggunakan Euclidean Distance. Untuk rumusnya yaitu :</p>
-<img src="img/euclidien.png" width="" align="" /><p>Selanjutnya mari kita hitung jaraknya dan menentukan nilai K (banyak tetangga) yang akan kita gunakan. Mari gunakan nilai K = 3, lalu kita identifikasi jarak tetangga ke-3 dari masing-masing data.</p>
-<img src="img/k.png" width="" align="" /><ol class="arabic simple" start="2">
+<img src="gambar/euclidien.png" width="" align="" /><p>Selanjutnya mari kita hitung jaraknya dan menentukan nilai K (banyak tetangga) yang akan kita gunakan. Mari gunakan nilai K = 3, lalu kita identifikasi jarak tetangga ke-3 dari masing-masing data.</p>
+<img src="gambar/k.png" width="" align="" /><ol class="arabic simple" start="2">
 <li><p>Menghitung Reachability Distance (RD)</p></li>
 </ol>
 <p>Selanjutnya kita hitung nilai Reachability Distance dari masing-masing objek. Tapi sebelum itu kita harus menentukan berapa banyak objek yang masuk ke dalam ruang lingkup tetangga ke-n dari suatu objek. Secara matematis bisa dituliskan seperti di bawah ini :</p>
 <p>k-distance neighborhood of o, Nk(o) = {o’| o’ in D, dist(o, o’) ≤ distk(o)}</p>
 <p>Yang dimana nilai dari Nk(o) akan lebih besar atau sama dengan nilai K</p>
 <p>Untuk contohnya pada objek a memiliki nilai jarak tetangga ke-3 yaitu 2,236068 berarti objek lain yang masuk ke dalam lingkupnya yaitu yang nilainya kurang atau sama dengan 2,236068 yang berarti berisikan {b, d, g}. Mari kita lakukan untuk objek yang lain.</p>
-<img src="img/nk.png" width="" align="" /><p>Selanjutnya hitung Reachability Distance dari maring-masing objek, untuk rumusnya yaitu :</p>
-<img src="img/rd_formula2.png" width="" align="" /><p>Sebagai contoh objek a, objek a memiliki 3 tetangga terdekat yaitu {b, d, g} kita lakukan perhitungan terhadap masing-masing objek, dengan memilih nilai terbesar dari perbandingan jarak tetangga ke-3 dari objek dengan jarak objek ke objek lain:</p>
+<img src="gambar/nk.png" width="" align="" /><p>Selanjutnya hitung Reachability Distance dari maring-masing objek, untuk rumusnya yaitu :</p>
+<img src="gambar/rd_formula2.png" width="" align="" /><p>Sebagai contoh objek a, objek a memiliki 3 tetangga terdekat yaitu {b, d, g} kita lakukan perhitungan terhadap masing-masing objek, dengan memilih nilai terbesar dari perbandingan jarak tetangga ke-3 dari objek dengan jarak objek ke objek lain:</p>
 <p>reachdist3(b&lt;-a) = max{dist3(b), dist(b,a)}</p>
 <p>reachdist3(b&lt;-a) = max(1,414213562, 1,414213562)</p>
 <p>reachdist3(b&lt;-a) =1,414213562</p>
 <p>Mari kita lakukan untuk keseluruhan objek</p>
-<img src="img/rd1.png" width="" align="" /><img src="img/rd2.png" width="" align="" /><ol class="arabic simple" start="3">
+<img src="gambar/rd1.png" width="" align="" /><img src="gambar/rd2.png" width="" align="" /><ol class="arabic simple" start="3">
 <li><p>Menghitung Local Reachability Distance (LRD)</p></li>
 </ol>
 <p>Selanjutnya melakukan perhitungan Local Reachability Distance (LRD), LRD dirumuskan seperti di bawah ini :</p>
-<img src="img/lrd_formula2.png" width="" align="" /><p>Berdasarkan rumus diatas bisa dideskripsikan bahwa LRD merupakan hasil dari pembagian banyak jumlah tetangga ke-n dari suatu objek dibagi dengan total dari reachdistance ability objek tersebut.</p>
+<img src="gambar/lrd_formula2.png" width="" align="" /><p>Berdasarkan rumus diatas bisa dideskripsikan bahwa LRD merupakan hasil dari pembagian banyak jumlah tetangga ke-n dari suatu objek dibagi dengan total dari reachdistance ability objek tersebut.</p>
 <p>Sehinga jika dilakukan perhitungan untuk setiap objek didapatkan hasil</p>
-<img src="img/lrd2.png" width="" align="" /><img src="img/lrd1.png" width="" align="" /><ol class="arabic simple" start="4">
+<img src="gambar/lrd2.png" width="" align="" /><img src="gambar/lrd1.png" width="" align="" /><ol class="arabic simple" start="4">
 <li><p>Menghitung Local Outlier Factor (LOF)</p></li>
 </ol>
 <p>Selanjutnya yang terakhir yaitu menghitung Local Outlier Factor (LOF), dirumuskan sebagai berikut :</p>
-<img src="img/lof_formula2.png" width="" align="" /><p>Berdasarkan rumus diatas diketahui jika LOF didapat dari hasil perkalian jumlah nilai lrd suatu objek dikali dengan jumlah reachability distance suatu objek.</p>
+<img src="gambar/lof_formula2.png" width="" align="" /><p>Berdasarkan rumus diatas diketahui jika LOF didapat dari hasil perkalian jumlah nilai lrd suatu objek dikali dengan jumlah reachability distance suatu objek.</p>
 <p>Sehinga jika dilakukan perhitungan untuk setiap objek didapatkan hasil</p>
-<img src="img/lof.png" width="" align="" /><p>Dari hasil diatas bisa ditemukan bahwa nilai lof h menyimpang dikarenakan perbedaan yang terlalu jauh dengan objek yang lain, sehingga bisa disimpulkan h adalah outlier</p>
+<img src="gambar/lof.png" width="" align="" /><p>Dari hasil diatas bisa ditemukan bahwa nilai lof h menyimpang dikarenakan perbedaan yang terlalu jauh dengan objek yang lain, sehingga bisa disimpulkan h adalah outlier</p>
 </section>
 <section id="menghitung-menggunakan-python-scikit-learn">
 <h3>Menghitung menggunakan python (scikit-learn)<a class="headerlink" href="#menghitung-menggunakan-python-scikit-learn" title="Link to this heading">#</a></h3>
@@ -2855,7 +2855,7 @@ Outlier at Id 8 has a rank of 5 with LOF score -14.021821334322073
 <section id="metode-gaussian-naive-bayes">
 <h2>Metode Gaussian Naive Bayes<a class="headerlink" href="#metode-gaussian-naive-bayes" title="Link to this heading">#</a></h2>
 <p>Gaussian Naive Bayes merupakan sebuah teknik klasifikasi yang digunakan dalam machine learning dengan menggunakan metode probability dan Distribusi Gaussian atau Distiribusi Normal. Gaussian Distribution mengasumsikan bahwa setiap feature pada data memiliki penngaruh yang independent dalam memprediksi target. Kombinasi prediksi dari seluruh parameter adalah prediksi akhir dengan probability dari target variable yang diklasifikasikan ke dalam dua kelas. Klasifikasi akhirnya adalah hasil probability yang lebih tinggi dari grup target maka itu adalah kelas dari suatu data.</p>
-<img src="img/general_gnb.png" width="" align="" /><section id="implementasi-dengan-sklearn">
+<img src="gambar/general_gnb.png" width="" align="" /><section id="implementasi-dengan-sklearn">
 <h3>Implementasi dengan Sklearn<a class="headerlink" href="#implementasi-dengan-sklearn" title="Link to this heading">#</a></h3>
 <p>Untuk perhitungan secara manual menggunakan excel akan dibahas setelah kita mengimplementasi model gaussian naive bayes menggunakan library scikit learn milik python.</p>
 <p>Untuk pembagiannya data train dan data test akan dibagi menjadi 20% data test dan 80% data train</p>
@@ -2963,13 +2963,13 @@ Accuracy:  0.967
 <ol class="arabic simple">
 <li><p>Mengambil data train dari model yang telah kita buat</p></li>
 <li><p>hitung probabilitas setiap data train
-<img src="img/prob_formula.png"></p></li>
+<img src="gambar/prob_formula.png"></p></li>
 <li><p>hitung mean dan standart devisiasi dari setiap fitur beserta setiap kelas pada data train</p></li>
 <li><p>tentukan suatu inputan data sepalLength, sepalWidth, petalLength, petalWidth</p></li>
 <li><p>hitung distribusi gausiaan setiap fitur beserta setiap kelas pada data train
-<img src="img/gnb_formula_detail.png"></p></li>
+<img src="gambar/gnb_formula_detail.png"></p></li>
 <li><p>hitung posteriori dari setiap kelas
-<img src="img/posteriori_formula.png"></p></li>
+<img src="gambar/posteriori_formula.png"></p></li>
 <li><p>tentukan maximum posteriori</p></li>
 <li><p>pada kelas yg mendapat posteriori maksimal itulah kelas dari data inputan baru tersebut</p></li>
 </ol>
@@ -3003,7 +3003,7 @@ Accuracy:  0.967
 <li><p>n(a) : banyaknya record data train pada suatu kelas</p></li>
 <li><p>N : total banyaknya record data train</p></li>
 </ul>
-<img src="img/hasil_probabilitas.png" width="" align="" /><ol class="arabic simple" start="3">
+<img src="gambar/hasil_probabilitas.png" width="" align="" /><ol class="arabic simple" start="3">
 <li><p>Menghitung mean dan standart devisiasi</p></li>
 </ol>
 <p>hitunglah mean dan standart devisiasi dari masing-masing fitur pada setiap kelas di data train.</p>
@@ -3012,7 +3012,7 @@ Accuracy:  0.967
 <li><p>mean : =AVERAGE()</p></li>
 <li><p>standart devisiasi : =STDEV.P()</p></li>
 </ul>
-<img src="img/mean_std.png" width="" align="" /><ol class="arabic simple" start="4">
+<img src="gambar/mean_std.png" width="" align="" /><ol class="arabic simple" start="4">
 <li><p>membuat inputan</p></li>
 </ol>
 <p>Buat suatu data acak untuk inputan sepalLength, sepalWidth, petalLength, dan petalWidth. Nantinya data ini akan kita gunakan untuk menguji hasil dari perhitungan excel kita sehingga kita bisa tahu termasuk kelas apakah data dari inputan kita, apakah termasuk ke kelas setosa, versicolor, atau virginica.</p>
@@ -3023,17 +3023,17 @@ Accuracy:  0.967
 <li><p>PetalLengthCm : 5</p></li>
 <li><p>PetalWidthCm : 2</p></li>
 </ul>
-<img src="img/inputan.png" width="" align="" /><ol class="arabic simple" start="5">
+<img src="gambar/inputan.png" width="" align="" /><ol class="arabic simple" start="5">
 <li><p>Menghitung distribusi gaussian</p></li>
 </ol>
 <p>Setelah didapati mean dan standart devisiasi dari setiap fitur pada setiap kelas, dan juga sudah menentukan inputan. maka langkah selanjutnya adalah memasukkan ke dalam rumus distribusi gaussian.</p>
 <p>berikut ini adalah rumusnya :</p>
-<img src="img/gnb_formula_detail.png" width="" align="" /><img src="img/ket_distribusi_gaussian.png" width="" align="" /><p>setelah kita tahu rumusnya, maka sekarang kita dapat melakukan perhitungan di excel. Berikut ini adalah hasil dari perhitungannya :</p>
-<img src="img/hasil_distribusi_gauss.png" width="" align="" /><ol class="arabic simple" start="6">
+<img src="gambar/gnb_formula_detail.png" width="" align="" /><img src="gambar/ket_distribusi_gaussian.png" width="" align="" /><p>setelah kita tahu rumusnya, maka sekarang kita dapat melakukan perhitungan di excel. Berikut ini adalah hasil dari perhitungannya :</p>
+<img src="gambar/hasil_distribusi_gauss.png" width="" align="" /><ol class="arabic simple" start="6">
 <li><p>menghitung posteriori</p></li>
 </ol>
 <p>Setelah didapat semua hasil dari distribusi gaussian, langkah selanjutnya adalah menentukan posteriori-nya. Berikut ini untuk rumusnya :</p>
-<img src="img/posteriori_formula.png" width="" align="" /><p>Dimana</p>
+<img src="gambar/posteriori_formula.png" width="" align="" /><p>Dimana</p>
 <ul class="simple">
 <li><p>P(A|Hi) : hasil perkalian setiap fitur pada setiap kelas</p></li>
 <li><p>P(a) : probabilitas setiap kelas</p></li>
@@ -3043,11 +3043,11 @@ P(A|Hi) = 0,76 * 1,00 * 0,24 * 0,01
 P(a) = 0,366667
 posteriori = P(A|Hi) * P(a) = 0,000558371</p>
 <p>Berikut ini hasil untuk perhitungan pada kelas lain :</p>
-<img src="img/hasil_posteriori.png" width="" align="" /><ol class="arabic simple" start="7">
+<img src="gambar/hasil_posteriori.png" width="" align="" /><ol class="arabic simple" start="7">
 <li><p>menentukan maximum posteriori</p></li>
 </ol>
 <p>setelah didapati semua posteriori, langkah selanjutnya adalah menentukan nilai maximum dari posteriori-nya. dan didapati hasilnya sebagai berikut :</p>
-<img src="img/hasil_max_post.png" width="" align="" /><p>kelas virginica mendapatkan nilai posteriori tertinggi dengan nilai 0,094235270</p>
+<img src="gambar/hasil_max_post.png" width="" align="" /><p>kelas virginica mendapatkan nilai posteriori tertinggi dengan nilai 0,094235270</p>
 <ol class="arabic simple" start="8">
 <li><p>Kesimpulan</p></li>
 </ol>
@@ -3101,8 +3101,8 @@ Created in <span style='font-weight:600;margin-left:4px;'>Deepnote</span></a></s
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
-        <p class="prev-next-subtitle">Author</p>
-        <p class="prev-next-title">Copyright by Glendy</p>
+        <p class="prev-next-subtitle"></p>
+        <p class="prev-next-title">go to top</p>
       </div>
     </a>
 </div>
